@@ -17,16 +17,21 @@ function calcNotation(eve) {
 
   let div = numberString.length - 1; 
 
-  if (number >= 10) {
+  if (true) {
     let numberNotation = number;
 
+    /* 
     for (let c = div; c >= 1; c--) {
       numberNotation /= 10;
-    }
+    } */
+    
+    // numberNotation = math.format(numberNotation,  {notation: 'fixed'});
+    
+    numberNotation = numberNotation.toExponential();
 
     resultNotation = `<p>${numberNotation} x 10<sup>${div}</sup></p>`;
 
-    result.innerHTML  = resultNotation;
+    result.innerHTML  = resultNotation.replace('.', ',');
   }
 }
 
